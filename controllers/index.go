@@ -3,7 +3,6 @@ package controllers
 import (
 	"blog/common"
 	"blog/models"
-	"fmt"
 	"github.com/astaxie/beego"
 	"html/template"
 	"strconv"
@@ -99,7 +98,6 @@ func (this *IndexController) Article() {
 	articleId := this.Ctx.Input.Param(":id")//获取文章id
 	id, _ := strconv.Atoi(articleId)//转为int
 	article, err := models.ArticleOne(id)//获取文章数据
-	fmt.Println(article)
 	//阅读数+1
 	models.ArticleIncrViews(id)
 	//如果文章不存在跳到404页
@@ -108,10 +106,18 @@ func (this *IndexController) Article() {
 	}
 	//加载公共数据
 	public(this, 0)
+	//将标签添加到keywords
+	keywords := ""
+	for k,v := range article.TagSlice{
+		keywords = common.MergeString(keywords,v["name"])
+		if k != len(article.TagSlice) - 1{
+			keywords = common.MergeString(keywords,",")
+		}
+	}
+	this.Data["keywords"] = keywords
+	this.Data["description"] = article.Title
 	preArticle, err := models.ArticleOne(id - 1)
 	nextArticle, err := models.ArticleOne(id + 1)
-	fmt.Println(preArticle)
-	fmt.Println(nextArticle)
 	this.Data["article"] = article//文章详情
 	this.Data["about"] = models.ArticleAbout(article.TagSlice)//相关文章
 	this.Data["pre_article"] = preArticle//上一篇

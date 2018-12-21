@@ -47,7 +47,7 @@ func CategoryOne(id int) (Category, error) {
 	var res Category
 	o := orm.NewOrm()
 	db := o.QueryTable(new(Category))
-	err := db.Filter("id", id).One(&res)
+	err := db.Filter("state", 0).Filter("id", id).One(&res)
 	return res,err
 }
 

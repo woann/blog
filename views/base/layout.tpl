@@ -2,21 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <title>{{ .website_title }}</title>
+    <meta name="description" content="{{ .description }}" />
+    <meta name="keywords" content="{{ .keywords }}" />
+    <meta name="author" content="吴先生的博客,304550409@qq.com">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
     <link rel="dns-prefetch" href="http://apps.bdimg.com" />
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="360-site-verification" content="c51f82f1f84f44fe79014fc75b9a0a45" />
     <meta name="apple-mobile-web-app-title" content="{{ .website_title }}" />
-    <title>{{ .website_title }}</title>
-    <meta name="keywords" content="{{ .keywords }}" />
-    <meta name="description" content="{{ .description }}" />
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/static/css/animate.min.css" rel="stylesheet" />
     <link href="/static/css/main.css" rel="stylesheet" />
     <link href="/static/lib/iconfonts/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
-    {{/*<link href="/static/lib/editor.md-master/css/editormd.css" rel="stylesheet" />*/}}
     <link rel="shortcut icon" href="{{ .favicon_icon }}" />
 </head>
 <body class="home blog nav_fixed list-comments-r site-layout-2">
