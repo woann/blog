@@ -156,7 +156,7 @@ func (this *IndexController) Tag() {
 }
 
 /**
- * 列表页
+ * 爬虫页
  */
 func (this *IndexController) News() {
 
@@ -170,7 +170,7 @@ func (this *IndexController) News() {
 		page = 1
 	}
 	total := models.UrlTotal()
-	pagesize := 10
+	pagesize := 20
 	this.Data["paginator"] = common.Paginator(page,pagesize,total)
 	//分类下文章列表数据
 	this.Data["list"] = models.UrlList(page, pagesize)
@@ -180,4 +180,6 @@ func (this *IndexController) News() {
 	this.LayoutSections = make(map[string]string)
 	this.LayoutSections["SideBar"] = "base/sidebar.tpl"
 }
+
+
 

@@ -8,7 +8,7 @@
                 <header>
                     <h2> <a href="{{ $v.Url }}" title="golang基础学习-字符串和整型互转">{{ $v.Title }}</a> </h2>
                 </header>
-                <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.CreatedAt }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
+                <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.Time }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
 
             </article>
         {{ end }}

@@ -45,7 +45,7 @@
             {{ end }}
             <li id="menu-item-999" class="menu-item menu-item-object-custom  menu-item-type-taxonomy  {{ if $.category_id }}  {{ if  eq $.category_id  999 }} current-menu-item  {{ end }}{{ end }}">
                 <a href="/news">
-                    爬虫资讯
+                    <i class="mdi mdi-package-down"></i> 爬虫资讯
                 </a>
             </li>
             <li class="navto-search">
