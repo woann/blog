@@ -72,6 +72,25 @@
 <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.1"></script>
 <script src="/static/js/main.js"></script>
 <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?51ea10a040873f48fdf5b649dae931d2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+
     function secondToDate(second) {
         if (!second) {
             return 0

@@ -116,6 +116,7 @@ func (this *IndexController) Article() {
 	}
 	this.Data["keywords"] = keywords
 	this.Data["description"] = article.Title
+	this.Data["website_title"] = article.Title
 	preArticle, err := models.ArticleOne(id - 1)
 	nextArticle, err := models.ArticleOne(id + 1)
 	this.Data["article"] = article//文章详情
