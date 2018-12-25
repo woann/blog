@@ -10,4 +10,6 @@ func init() {
 	beego.Router("/category/:id:int", &controllers.IndexController{},"get:List")
 	beego.Router("/article/:id:int", &controllers.IndexController{},"get:Article")
 	beego.Router("/tag", &controllers.IndexController{},"get:Tag")
+	beego.Router("/news", &controllers.IndexController{},"get:News")
+	beego.Router("/crawler", &controllers.CrawlerController{},"get:Index")
 }

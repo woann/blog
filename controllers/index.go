@@ -155,3 +155,29 @@ func (this *IndexController) Tag() {
 	this.LayoutSections["SideBar"] = "base/sidebar.tpl"
 }
 
+/**
+ * 列表页
+ */
+func (this *IndexController) News() {
+
+	//加载公共数据
+	public(this, 0)
+	this.Data["category_name"] = "爬虫资讯"
+	this.Data["category_id"] = 999
+	//分页
+	page,_ := this.GetInt("page")
+	if page == 0{
+		page = 1
+	}
+	total := models.UrlTotal()
+	pagesize := 10
+	this.Data["paginator"] = common.Paginator(page,pagesize,total)
+	//分类下文章列表数据
+	this.Data["list"] = models.UrlList(page, pagesize)
+	//模板渲染
+	this.Layout = "base/layout.tpl"
+	this.TplName = "url.tpl"
+	this.LayoutSections = make(map[string]string)
+	this.LayoutSections["SideBar"] = "base/sidebar.tpl"
+}
+
