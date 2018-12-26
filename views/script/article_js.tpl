@@ -20,16 +20,12 @@
             $(window).scroll(function(){
                 mTop = $('#mulu')[0].offsetTop;
                 sideTop = $('.sidebar')[0].offsetTop;
-                sTop = $(window).scrollTop();
-                result = mTop - sTop;
-                result1 = sideTop - sTop;
-                console .log(result);
-                if (result1 > -604){
+                result = sideTop - sTop;
+                if (result > -604){
                     $('#mulu').css({"position":"relative","top":""})
                 }else{
                     $('#mulu').css({"position":"fixed","top":"20px"})
                 }
-                console .log(result1);
             })
         })
     })
