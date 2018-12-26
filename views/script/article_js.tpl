@@ -16,8 +16,8 @@
             tocm            : true,
             tocContainer    : "#custom-toc-container",
         });
-        $(document).ready(function(){//在文档加载完毕后执行
-            $(window).scroll(function(){//开始监听滚动条
+        $(document).ready(function(){
+            $(window).scroll(function(){
                 mTop = $('#mulu')[0].offsetTop;
                 sideTop = $('.sidebar')[0].offsetTop;
                 sTop = $(window).scrollTop();
