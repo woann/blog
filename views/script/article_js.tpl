@@ -24,7 +24,7 @@
                 result = mTop - sTop;
                 result1 = sideTop - sTop;
                 console .log(result);
-                if (result1 > -612){
+                if (result1 > -604){
                     $('#mulu').css({"position":"relative","top":""})
                 }else{
                     $('#mulu').css({"position":"fixed","top":"20px"})
