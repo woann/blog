@@ -19,11 +19,11 @@ type CrawlerController struct {
 
 func (this *CrawlerController)Index(){
 	this.EnableRender = false //关闭模板渲染
-	//var urls = []string{"https://segmentfault.com/t/golang","https://segmentfault.com/t/php","https://segmentfault.com/t/laravel"}
-	//for _,v := range urls{
-	//	go segmentfault(v)
-	//}
-	var juejinUrls = []string{"https://juejin.im/welcome/backend"}
+	var urls = []string{"https://segmentfault.com/t/golang","https://segmentfault.com/t/php","https://segmentfault.com/t/laravel"}
+	for _,v := range urls{
+		go segmentfault(v)
+	}
+	var juejinUrls = []string{"https://juejin.im/welcome/backend","https://juejin.im/welcome/article"}
 	for _,v := range juejinUrls{
 		go juejin(v)
 	}
