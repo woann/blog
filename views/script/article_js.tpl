@@ -21,7 +21,7 @@
                 sideTop = $('.sidebar')[0].offsetTop;
                 sTop = $(window).scrollTop();
                 result = sideTop - sTop;
-                if (result1 > -604){
+                if (result > -604){
                     $('#mulu').css({"position":"relative","top":""})
                 }else{
                     $('#mulu').css({"position":"fixed","top":"20px"})
