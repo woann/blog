@@ -9,7 +9,7 @@ import (
 	"time"
 )
 func init() {
-	orm.Debug = true
+	orm.Debug = false
 	orm.RegisterDriver("mysql",orm.DRMySQL)
 	mysqluser := beego.AppConfig.String("mysqluser")
 	mysqlpass := beego.AppConfig.String("mysqlpass")
