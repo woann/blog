@@ -162,6 +162,7 @@ func (this *IndexController) News() {
 
 	//加载公共数据
 	public(this, 0)
+	this.Data["category_name"] = "外部资讯"
 	this.Data["category_id"] = 999
 	//分页
 	page,_ := this.GetInt("page")
