@@ -75,6 +75,7 @@ func (this *IndexController) List() {
 	public(this, categoryId)
 	this.Data["category_id"] = categoryId
 	this.Data["category"] = category
+	this.Data["website_title"] = common.MergeString(category.Name," - ",this.Data["website_title"].(string))
 	//分页
 	page,_ := this.GetInt("page")
 	if page == 0{
