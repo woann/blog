@@ -165,7 +165,7 @@
         script.type = 'text/javascript';
         script.setAttribute("opacity", "0.7");
         script.setAttribute("zindex", "-2");
-        script.setAttribute("count", "100");
+        script.setAttribute("count", "150");
         head.appendChild(script)
     }
     if (IsPC()) {
