@@ -7,6 +7,7 @@ import (
 	"math"
 	"strconv"
 	"blog/common"
+	"html/template"
 )
 
 type Url struct {
@@ -20,6 +21,7 @@ type Url struct {
 type ShowUrl struct {
 	Url
 	Time string
+	RealUrl template.URL
 }
 
 func UrlTotal() int64 {
@@ -37,7 +39,7 @@ func UrlList(page,pagesize int)[]ShowUrl{
 	offset := (page - 1) * pagesize
 	db.Limit(pagesize, offset).OrderBy("-created_at").All(&list)
 	for _,v := range list{
-		res = append(res, ShowUrl{v,StrTime(v.CreatedAt)})
+		res = append(res, ShowUrl{v,StrTime(v.CreatedAt),template.URL(v.Url)})
 	}
 	return res
 }

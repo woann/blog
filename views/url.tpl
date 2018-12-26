@@ -6,7 +6,7 @@
         {{ range $k,$v := .list }}
             <article class="excerpt excerpt-9" style="padding: 20px 20px 20px 50px;">
                 <header>
-                    <h2> <a href="{{ $v.Url }}" title="golang基础学习-字符串和整型互转">{{ $v.Title }}</a> </h2>
+                    <h2> <a target="_blank" href="{{  $v.RealUrl }}" title="{{ $v.Title }}">{{ $v.Title }}</a> </h2>
                 </header>
                 <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.Time }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
 
