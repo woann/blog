@@ -23,9 +23,9 @@
         {{ end }}
     </ul>
 </div>
-<div class="widget widget_meta affix-top">
+<div class="widget widget_meta affix-top" id="mulu">
     <h3>索引目录</h3>
-    <div id="sidebar"  style="max-height: 600px;overflow: scroll">
+    <div id="sidebar"  style="max-height: 600px;overflow: hidden">
         <div class="markdown-body editormd-preview-container" id="custom-toc-container"></div>
     </div>
 </div>
