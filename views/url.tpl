@@ -4,16 +4,16 @@
             <h3 >{{ .category_name }}</h3>
         </div>
         {{ range $k,$v := .list }}
-            <article class="excerpt excerpt-9" style="padding: 20px 20px 20px 50px;">
-                <div style="float: left;width: 80%">
+            <article class="excerpt excerpt-9 article-box">
+                <div class="content-box" style="float: left;width: 80%">
                     <header>
                         <h2> <a target="_blank" href="{{  $v.RealUrl }}" title="{{ $v.Title }}">{{ $v.Title }}</a> </h2>
                     </header>
                     <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.Time }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
                 </div>
-                <div style="float: right;width:20%;">
+                <div class="cover-box">
                     {{ if $v.Cover }}
-                    <img src="{{ $v.Cover }}" style="width: 60px;height: 60px;" alt="{{ $v.Title }}">
+                    <img src="{{ $v.Cover }}" alt="{{ $v.Title }}">
                     {{ end }}
                 </div>
             </article>

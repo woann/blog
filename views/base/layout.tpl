@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{ .website_title }}</title>
+    <link rel="shortcut icon" href="{{ .favicon_icon }}" />
     <meta name="description" content="{{ .description }}" />
     <meta name="keywords" content="{{ .keywords }}" />
     <meta name="author" content="吴先生的博客,304550409@qq.com">
@@ -17,7 +18,7 @@
     <link href="/static/css/animate.min.css" rel="stylesheet" />
     <link href="/static/css/main.css" rel="stylesheet" />
     <link href="/static/lib/iconfonts/mdi/css/materialdesignicons.min.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="{{ .favicon_icon }}" />
+    {{ .Header }}
 </head>
 <body class="home blog nav_fixed list-comments-r site-layout-2">
 <header class="header">

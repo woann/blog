@@ -179,6 +179,8 @@ func (this *IndexController) News() {
 	this.TplName = "url.tpl"
 	this.LayoutSections = make(map[string]string)
 	this.LayoutSections["SideBar"] = "base/sidebar.tpl"
+	this.LayoutSections["Header"] = "header/url_header.tpl"
+
 }
 
 
