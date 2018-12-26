@@ -18,10 +18,10 @@
         });
         $(document).ready(function(){
             $(window).scroll(function(){
-                mTop = $('#mulu')[0].offsetTop;
                 sideTop = $('.sidebar')[0].offsetTop;
+                sTop = $(window).scrollTop();
                 result = sideTop - sTop;
-                if (result > -604){
+                if (result1 > -604){
                     $('#mulu').css({"position":"relative","top":""})
                 }else{
                     $('#mulu').css({"position":"fixed","top":"20px"})
