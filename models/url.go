@@ -14,6 +14,7 @@ type Url struct {
 	Id int
 	Title string
 	Url string
+	Cover string
 	DataId string
 	From string
 	CreatedAt int64

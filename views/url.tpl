@@ -5,11 +5,17 @@
         </div>
         {{ range $k,$v := .list }}
             <article class="excerpt excerpt-9" style="padding: 20px 20px 20px 50px;">
-                <header>
-                    <h2> <a target="_blank" href="{{  $v.RealUrl }}" title="{{ $v.Title }}">{{ $v.Title }}</a> </h2>
-                </header>
-                <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.Time }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
-
+                <div style="float: left;width: 80%">
+                    <header>
+                        <h2> <a target="_blank" href="{{  $v.RealUrl }}" title="{{ $v.Title }}">{{ $v.Title }}</a> </h2>
+                    </header>
+                    <p class="meta"> <time><i class="fa fa-clock-o"></i>{{ $v.Time }}</time> <span class="author"><i class="fa fa-user"></i>{{ $v.From }} </span></p>
+                </div>
+                <div style="float: right;width:20%;">
+                    {{ if $v.Cover }}
+                    <img src="{{ $v.Cover }}" style="width: 60px;height: 60px;" alt="{{ $v.Title }}">
+                    {{ end }}
+                </div>
             </article>
         {{ end }}
         <div class="pagination">
