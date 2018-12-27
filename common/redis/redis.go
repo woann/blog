@@ -8,9 +8,9 @@ import (
 var redisPool *redis.Pool
 
 const (
-	RedisURL            = "111.231.218.145:6379"
-	redisMaxIdle        = 30   //最大空闲连接数
-	redisIdleTimeoutSec = 240 //最大空闲连接时间
+	RedisURL            = "127.0.0.1:6379"
+	redisMaxIdle        = 100   //最大空闲连接数
+	redisIdleTimeoutSec = 300 //最大空闲连接时间
 	RedisPassword       = "wqg951122"
 )
 // NewRedisPool 返回redis连接池
