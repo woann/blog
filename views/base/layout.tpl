@@ -53,6 +53,7 @@
                 <a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a>
             </li>
         </ul>
+        <i class="fa fa-bars m-icon-nav"></i>
     </div>
 </header>
 <div class="site-search">
@@ -74,29 +75,15 @@
         <p> 本站已稳定运行 <strong id="htmer_time" style="color: blue"></strong></p>
     </div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    window.jsui={
+    };
+</script>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js?ver=5.1"></script>
+<script src="/static/js/loader.js"></script>
 <script src="/static/js/main.js"></script>
 <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?51ea10a040873f48fdf5b649dae931d2";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-
     function secondToDate(second) {
         if (!second) {
             return 0
@@ -170,6 +157,8 @@
     }
     if (IsPC()) {
         includeJs("https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js")
+    }else {
+        $('.footer').css('z-index','-1');
     }
 </script>
 {{ .Script }}
