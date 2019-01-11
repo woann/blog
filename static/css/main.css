@@ -773,7 +773,7 @@ body {
     font-size:15px;
     line-height:25px;
     word-wrap:break-word;
-    overflow:scroll
+    overflow:auto
 }
 .article-content img {
     margin:5px 0;
