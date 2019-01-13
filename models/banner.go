@@ -19,7 +19,7 @@ func BannerList() []Banner {
 	o := orm.NewOrm()
 	db := o.QueryTable(new(Banner))
 	var list []Banner
-	db.Filter("state", 0).All(&list)
+	db.Filter("state", 0).OrderBy("-id").All(&list)
 	for k,v := range list{
 		list[k].Image = common.Asset(v.Image)
 	}

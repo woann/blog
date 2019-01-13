@@ -16,7 +16,7 @@
             <p class="note note_space"> {{ $v.Des }} </p>
             <p class="tags">
                 {{ range $key,$val := $v.TagSlice }}
-                <a class="tag" target="_black" style="background:#{{ index $val "color" }}" title="{{ index $val "name" }}" href="/?tag={{ index $val "name" }}&color={{ index $val "color" }}" rel="tag">{{ index $val "name" }}</a>
+                <a class="tag" target="_black" style="background:#{{ index $val "color" }}" title="{{ index $val "name" }}" href="/tag?name={{ index $val "name" }}&color={{ index $val "color" }}" rel="tag">{{ index $val "name" }}</a>
                 {{ end }}
             </p>
         </article>

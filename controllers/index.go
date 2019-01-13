@@ -47,7 +47,7 @@ func (this *IndexController) Index () {
 	if page == 0{
 		page = 1
 	}
-	total := models.ArticleTotal(0)
+	total := models.ArticleTotal(0,wd)
 	pagesize := 10
 	this.Data["paginator"] = common.Paginator(page,pagesize,total)
 	//获取文章列表
@@ -81,7 +81,7 @@ func (this *IndexController) List() {
 	if page == 0{
 		page = 1
 	}
-	total := models.ArticleTotal(categoryId)
+	total := models.ArticleTotal(categoryId,"")
 	pagesize := 10
 	this.Data["paginator"] = common.Paginator(page,pagesize,total)
 	//分类下文章列表数据
@@ -144,9 +144,9 @@ func (this *IndexController) Tag() {
 	if page == 0{
 		page = 1
 	}
-	total := models.ArticleTotal(0)
+	total := models.ArticleTotal(0,name)
 	pagesize := 10
-	this.Data["paginator"] = common.Paginator(page,pagesize,total)
+	this.Data["paginator"] = common.Paginator(page, pagesize, total)
 	//获取文章列表
 	this.Data["list"] = models.ArticleListByTime(page, pagesize, name)
 	//渲染页面

@@ -81,15 +81,21 @@ func ArticleListByCategory(categoryId int,page int,pagesize int) []ArticleShow {
 /**
  * 文章总数
  */
-func ArticleTotal(categoryId int) int64 {
+func ArticleTotal(categoryId int,wd string) int64 {
 	o := orm.NewOrm()
 	db := o.QueryTable(new(Article))
 	var res int64
-	if categoryId == 0{
-		res, _ = db.Filter("state", 0).Count()
-	}else{
-		res, _ = db.Filter("state", 0).Filter("category_id", categoryId).Count()
+	conn := orm.NewCondition()
+	conn1 := orm.NewCondition()
+	conn.And("state", 0)
+	if categoryId != 0{
+		conn.And("category_id", categoryId)
 	}
+	if wd != ""{
+		conn1 = conn1.Or("tags__icontains", wd).Or("title__icontains", wd)
+		conn = conn.AndCond(conn1)
+	}
+	res, _ = db.SetCond(conn).Count()
 	return res
 }
 
