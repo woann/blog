@@ -89,7 +89,7 @@ func ArticleTotal(categoryId int,wd string) int64 {
 	conn1 := orm.NewCondition()
 	conn.And("state", 0)
 	if categoryId != 0{
-		conn.And("category_id", categoryId)
+		conn = conn.And("category_id", categoryId)
 	}
 	if wd != ""{
 		conn1 = conn1.Or("tags__icontains", wd).Or("title__icontains", wd)
